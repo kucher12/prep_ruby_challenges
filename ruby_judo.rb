@@ -110,11 +110,22 @@ puts "5. Prime Method. 7 is a prime? = #{is_prime?(7)} and 14 is a prime? = #{is
 Write a method overlap which takes two rectangles defined by the coordinates of their corners, e.g. [[0,0],[3,3]] and [[1,1],[4,6]], and determines whether they overlap. You can assume all coordinates are positive integers.
 =end
 
-def overlap
+def overlap(rectangle_1, rectangle_2)
 
+  # we need to check each coordinate on X and Y axis
+  if rectangle_1[0][0] <= rectangle_2[0][0] && rectangle_1[0][1] <= rectangle_2[0][1]
+    if rectangle_1[1][0] <= rectangle_2[1][0] && rectangle_1[1][1] <= rectangle_2[1][1]
+        return true
+    else
+        return false
+    end
+  else
+    return false
+  end
 end
 
 # check if works:
 
-puts "6. Overlap Method = #{overlap()}"
+puts "6. Overlap Method = #{overlap([ [0,0],[3,3] ], [ [1,1],[4,5] ] )}"
+puts "6.1 Overlap Method = #{overlap([ [0,0],[1,4] ], [ [1,1],[3,2] ])}"
 
