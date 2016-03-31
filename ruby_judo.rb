@@ -50,7 +50,7 @@ def uniques(array)
 end
 
 def uniques?(array)
-  array & array
+  array & array # array is evaluated against itself and new array with no duplicates is returned
 end
 
 
@@ -67,16 +67,15 @@ puts "3.1 Uniques Method2 = #{uniques?( [1, 5, "frog", 2, 1, 3, "frog"])}"
 Write a method combinations which takes two arrays of strings and returns an array with all of the combinations of the items in them, listing the first items first.
 =end
 
-def combinations(array1, array2)
+def combinations(array_1, array_2)
   x = 0
   new_array = []
-  while x < array2.length
-    array1.each_with_index do |item|
-      new_combo = item + array2[x]
+    array_1.each_with_index do |string_1|
+      array_2.each_with_index do |string_2|
+        new_combo = string_1 + string_2
       new_array << new_combo
-      x += 1
+      end
     end
-  end
   return new_array
 end
 
