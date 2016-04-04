@@ -68,7 +68,6 @@ Write a method combinations which takes two arrays of strings and returns an arr
 =end
 
 def combinations(array_1, array_2)
-  x = 0
   new_array = []
     array_1.each_with_index do |string_1|
       array_2.each_with_index do |string_2|
